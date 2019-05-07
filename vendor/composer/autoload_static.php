@@ -22,6 +22,10 @@ class ComposerStaticInita1d2e4e430f9f35bc41c98fa8ae43a2b
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'U' => 
+        array (
+            'Underscore\\' => 11,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
@@ -33,6 +37,7 @@ class ComposerStaticInita1d2e4e430f9f35bc41c98fa8ae43a2b
         array (
             'Psr\\Http\\Message\\' => 17,
             'PhpParser\\' => 10,
+            'Patchwork\\' => 10,
         ),
         'F' => 
         array (
@@ -56,6 +61,7 @@ class ComposerStaticInita1d2e4e430f9f35bc41c98fa8ae43a2b
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Inflector\\' => 26,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -78,6 +84,11 @@ class ComposerStaticInita1d2e4e430f9f35bc41c98fa8ae43a2b
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Underscore\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/anahkiasen/underscore-php/src',
+            1 => __DIR__ . '/..' . '/anahkiasen/underscore-php/tests',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -102,6 +113,10 @@ class ComposerStaticInita1d2e4e430f9f35bc41c98fa8ae43a2b
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Patchwork\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/patchwork/utf8/src/Patchwork',
         ),
         'Firebase\\JWT\\' => 
         array (
@@ -159,6 +174,10 @@ class ComposerStaticInita1d2e4e430f9f35bc41c98fa8ae43a2b
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -185,6 +204,7 @@ class ComposerStaticInita1d2e4e430f9f35bc41c98fa8ae43a2b
 
     public static $classMap = array (
         'Help' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Help.php',
+        'Normalizer' => __DIR__ . '/..' . '/patchwork/utf8/src/Normalizer.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/AssertionFailedError.php',
