@@ -5,6 +5,7 @@ namespace App\HttpController;
 
 use App\Utility\Authorization;
 use App\Utility\PageInfo;
+use EasySwoole\Validate\Validate;
 
 use Underscore\Types\Arrays;
 
@@ -13,12 +14,14 @@ class User extends Base
 
     function list()
     {
-        $pageNum = 1;
-        $pageSize = 10;
-        $sort = 'id';
-        $order = 'DESC';
+        $req = $this->request();
 
-        $data = new PageInfo($this->getDbConnection(),'liyang_test.user',$pageNum, $pageSize, $sort, $order);
+        $pageNum = $req->getQueryParam('page_num') ?: 1;
+        $pageSize = $req->getQueryParam('page_size') ?: 10;
+        $sort = $req->getQueryParam('sort') ?: 'id';
+        $order = $req->getQueryParam('order') ?: 'DESC';
+
+        $data = new PageInfo($this->db, 'liyang_test.user', $pageNum, $pageSize, $sort, $order);
 
         $this->writeJson(200, $data, 'success');
     }
@@ -27,9 +30,11 @@ class User extends Base
     function login()
     {
 
-        $userId = $this->request()->getQueryParam('id');
+        $req = $this->request();
 
-        $user = $this->db
+        $userId = $req->getQueryParam('id');
+
+        $user = $this->getDb()
             ->where('id', $userId)
             ->get("liyang_test.user");
 
@@ -40,8 +45,26 @@ class User extends Base
         $token = Authorization::generateToken($user);
         $user['token'] = $token;
 
-//        $jwt = Authorization::validateToken($token);
-
         $this->writeJson(200, $user, 'success');
+    }
+
+    function add()
+    {
+
+        $params = $this->request()->getQueryParams();
+
+        $validator = new Validate();
+
+        $validator->addColumn('name')->required('姓名必填')->betweenLen(1, 200, '名字长度只能在1-200之间');
+        $validator->addColumn('age')->required('年龄必填');
+
+        if (!$this->validate($validator)) {
+            return $this->writeJson(400, $validator->getError()->__toString(), 'fail');
+        }
+
+        $name = $params['name'];
+        $age = $params['age'];
+
+        $this->writeJson(200, $params, 'success');
     }
 }

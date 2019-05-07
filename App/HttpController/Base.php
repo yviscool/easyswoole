@@ -21,16 +21,13 @@ use Exception;
 
 abstract class Base extends Controller
 {
+
     // 数据库链接
-    public $db;
+    protected $db;
 
     // 保护的路由
     protected $protectedRoutes = [];
 
-//    public function __construct()
-//    {
-//        parent::__construct();
-//    }
 
     function index()
     {
@@ -124,7 +121,8 @@ abstract class Base extends Controller
         parent::gc();
     }
 
-    protected function getDbConnection(): MysqlObject
+    // 获取数据库链接
+    protected function getDb(): MysqlObject
     {
         return $this->db;
     }
