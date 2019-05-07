@@ -1,0 +1,9 @@
+[2019-05-07 09:24:43][Warning][file:/var/www/code/App/HttpController/Base.php][line:75]array_filter() expects parameter 1 to be array, null given
+[2019-05-07 09:24:43][Warning][file:/var/www/code/App/HttpController/Base.php][line:78]sizeof(): Parameter must be an array or an object that implements Countable
+[2019-05-07 09:27:53][Warning][file:/var/www/code/App/HttpController/Base.php][line:70]implode(): Invalid arguments passed
+[2019-05-07 09:29:08][Warning][file:/var/www/code/App/HttpController/Base.php][line:77]array_filter() expects parameter 1 to be array, null given
+[2019-05-07 09:29:08][Warning][file:/var/www/code/App/HttpController/Base.php][line:80]sizeof(): Parameter must be an array or an object that implements Countable
+[2019-05-07 09:30:30][Warning][file:/var/www/code/App/HttpController/Base.php][line:71]implode(): Invalid arguments passed
+[2019-05-07 09:31:13][Warning][file:/var/www/code/App/HttpController/Base.php][line:71]implode(): Argument must be an array
+[2019-05-07 09:32:30][Warning][file:/var/www/code/App/HttpController/Base.php][line:77]array_filter() expects parameter 1 to be array, null given
+[2019-05-07 09:32:30][Warning][file:/var/www/code/App/HttpController/Base.php][line:80]sizeof(): Parameter must be an array or an object that implements Countable
